@@ -7,7 +7,7 @@ import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 import com.logoteknia.spaceinvaders.SpaceInvaders;
 
 public class AndroidLauncher extends AndroidApplication {
-	@Override
+	//@Override
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
