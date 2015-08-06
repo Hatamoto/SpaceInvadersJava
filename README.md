@@ -13,4 +13,6 @@ Peli:
 - Erilaisia tauluja
 - Peli nopeutuu ja vaikeutuu hieman taulu taululta
 
+xxx
+
 
