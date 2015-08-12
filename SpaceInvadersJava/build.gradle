@@ -32,22 +32,21 @@ allprojects {
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
     }
 }
-/*
+
 subprojects {
-    apply plugin: 'info.solidsoft.pitest'   //'pitest' for plugin versions <1.1.0
+    apply plugin: "info.solidsoft.pitest"   //'pitest' for plugin versions <1.1.0
 
     pitest {
         threads = 4
-
+        
         if (project.name in ['module-without-any-test']) {
             failWhenNoMutations = false
         }
     }
 }
-*/
+
 project(":desktop") {
     apply plugin: "java"
-
 
     dependencies {
         compile project(":core")
