@@ -1,6 +1,9 @@
 package screen;
 
 /**
+ *
+ * The manager class that switches between different screens
+ *
  * Created by DreddTop on 13/08/15.
  */
 public class ScreenManager {
