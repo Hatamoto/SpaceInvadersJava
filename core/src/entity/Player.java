@@ -20,8 +20,10 @@ public class Player extends Entity {
 
         if (Gdx.input.isKeyPressed(Input.Keys.A))
             setDirection(-300, 0);
-        if (Gdx.input.isKeyPressed(Input.Keys.D))
+        else if (Gdx.input.isKeyPressed(Input.Keys.D))
             setDirection(300, 0);
+        else
+            setDirection(0, 0);
 
     }
 }
