@@ -4,7 +4,7 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import screen.MenuScreen;
+import screen.GameScreen;
 import screen.ScreenManager;
 
 /**
@@ -25,7 +25,7 @@ public class SpaceInvaders extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		ScreenManager.setScreen(new MenuScreen());
+		ScreenManager.setScreen(new GameScreen());
 	}
 
 	@Override
@@ -46,9 +46,6 @@ public class SpaceInvaders extends ApplicationAdapter {
 		if (ScreenManager.getCurrentScreen() != null)
 			ScreenManager.getCurrentScreen().render(batch);
 
-		//batch.begin();
-		//batch.draw(img, 0, 0);
-		//batch.end();
 	}
 
 	@Override

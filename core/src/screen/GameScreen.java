@@ -3,6 +3,7 @@ package screen;
 import camera.OrthoCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
+import entity.EntityManager;
 import entity.Player;
 
 /**
@@ -13,29 +14,29 @@ import entity.Player;
  * Created by DreddTop on 13/08/15.
  */
 
-public class MenuScreen extends Screen {
+public class GameScreen extends Screen {
 
     private OrthoCamera camera;
-    private Player player;
+    private EntityManager entityManager;
 
     @Override
     public void create() {
         System.out.println("Created");
         camera = new OrthoCamera();
-        player = new Player(new Vector2(240, 18), new Vector2(0, 0));
+        entityManager = new EntityManager(5);
     }
 
     @Override
     public void update() {
         camera.update();
-        player.update();
+        entityManager.update();
     }
 
     @Override
     public void render(SpriteBatch sb) {
         sb.setProjectionMatrix(camera.combined);
         sb.begin();
-        player.render(sb);
+        entityManager.render(sb);
         sb.end();
     }
 
