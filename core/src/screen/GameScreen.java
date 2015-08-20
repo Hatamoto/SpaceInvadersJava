@@ -23,7 +23,7 @@ public class GameScreen extends Screen {
     public void create() {
         System.out.println("Created");
         camera = new OrthoCamera();
-        entityManager = new EntityManager(5);
+        entityManager = new EntityManager(25);
     }
 
     @Override

@@ -16,7 +16,7 @@ public class EntityManager {
     private final Player player;
 
     public EntityManager(int amount) {
-        player = new Player(new Vector2(240, 18), new Vector2(0, 0));
+        player = new Player(new Vector2(240, 18), new Vector2(0, 0), this);
         for (int i = 0; i < amount; i++) {
             float x = MathUtils.random(0, SpaceInvaders.WIDTH - TextureManager.ENEMY.getWidth());
             float y = MathUtils.random(SpaceInvaders.HEIGHT, SpaceInvaders.HEIGHT * 2);
@@ -27,8 +27,11 @@ public class EntityManager {
     public void update() {
         for (Entity e : entities)
             e.update();
+        for (Missile m : getMissiles())
+            if (m.checkEnd())
+                entities.removeValue(m, false);
         player.update();
-
+        checkCollisions();
     }
 
     public void render(SpriteBatch sb) {
@@ -37,8 +40,38 @@ public class EntityManager {
         player.render(sb);
     }
 
+    private void checkCollisions() {
+        for (Enemy e : getEnemies()) {
+            for (Missile m : getMissiles()) {
+                if (e.getBounds().contains(m.getBounds()))
+                    entities.removeValue(e, false);
+                    //entities.removeValue(m, false);
+            }
+        }
+    }
+
     public void addEntity(Entity entity) {
         entities.add(entity);
+    }
+
+    private Array<Enemy> getEnemies() {
+        Array<Enemy> returnArray = new Array<Enemy>();
+        for (Entity e : entities)
+            if (e instanceof Enemy)
+                returnArray.add((Enemy)e);
+        return returnArray;
+    }
+
+    private Array<Missile> getMissiles() {
+        Array<Missile> returnArray = new Array<Missile>();
+        for (Entity e : entities)
+            if (e instanceof Missile)
+                returnArray.add((Missile)e);
+        return returnArray;
+    }
+
+    public boolean gameOver() {
+        return getEnemies().size <= 0;
     }
 
 

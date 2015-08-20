@@ -3,6 +3,7 @@ package entity;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 /**
@@ -28,6 +29,11 @@ public abstract class Entity {
 
     public Vector2 getPosition() {
         return position;
+    }
+
+    public Rectangle getBounds() {
+        System.out.println(position.x + " " + position.y + " " + texture.getWidth() + " " + texture.getHeight());
+        return new Rectangle(position.x, position.y, texture.getWidth(), texture.getHeight());
     }
 
     public void setDirection(float x, float y) {

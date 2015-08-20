@@ -7,8 +7,21 @@ import com.badlogic.gdx.graphics.Texture;
  */
 public class TextureManager {
 
-    public static Texture PLAYER = new Texture(Gdx.files.internal("player.png"));
-    public static Texture MISSILE = new Texture(Gdx.files.internal("missile.png"));
-    public static Texture ENEMY = new Texture(Gdx.files.internal("enemy.png"));
 
+
+    public static final Texture PLAYER = new Texture(Gdx.files.internal("player.png"));
+    public static final Texture MISSILE = new Texture(Gdx.files.internal("missile.png"));
+    public static final Texture ENEMY = new Texture(Gdx.files.internal("enemy.png"));
+
+    public static Texture getENEMY() {
+        return ENEMY;
+    }
+
+    public static Texture getPLAYER() {
+        return PLAYER;
+    }
+
+    public static Texture getMISSILE() {
+        return MISSILE;
+    }
 }
