@@ -43,9 +43,10 @@ public class EntityManager {
     private void checkCollisions() {
         for (Enemy e : getEnemies()) {
             for (Missile m : getMissiles()) {
-                if (e.getBounds().contains(m.getBounds()))
+                if (e.getBounds().contains(m.getBounds())) {
                     entities.removeValue(e, false);
-                    //entities.removeValue(m, false);
+                    entities.removeValue(m, false);
+                }
             }
         }
     }
@@ -57,8 +58,9 @@ public class EntityManager {
     private Array<Enemy> getEnemies() {
         Array<Enemy> returnArray = new Array<Enemy>();
         for (Entity e : entities)
-            if (e instanceof Enemy)
-                returnArray.add((Enemy)e);
+            if (e instanceof Enemy) {
+                returnArray.add((Enemy) e);
+            }
         return returnArray;
     }
 
