@@ -6,6 +6,8 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.logoteknia.spaceinvadersjava.SpaceInvaders;
 import com.logoteknia.spaceinvadersjava.TextureManager;
+import screen.GameOverScreen;
+import screen.ScreenManager;
 
 /**
  * Created by DreddTop on 16/08/15.
@@ -43,10 +45,16 @@ public class EntityManager {
     private void checkCollisions() {
         for (Enemy e : getEnemies()) {
             for (Missile m : getMissiles()) {
-                if (e.getBounds().contains(m.getBounds())) {
+                if (e.getBounds().overlaps(m.getBounds())) {
                     entities.removeValue(e, false);
                     entities.removeValue(m, false);
+                    if (gameOver()) {
+                        ScreenManager.setScreen(new GameOverScreen(true));
+                    }
                 }
+            }
+            if (e.getBounds().overlaps(player.getBounds())) {
+                ScreenManager.setScreen(new GameOverScreen(false));
             }
         }
     }
