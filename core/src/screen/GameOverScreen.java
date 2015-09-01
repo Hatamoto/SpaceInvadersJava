@@ -7,13 +7,17 @@ import com.logoteknia.spaceinvadersjava.SpaceInvaders;
 import com.logoteknia.spaceinvadersjava.TextureManager;
 
 /**
- * Created by DreddTop on 24/08/15.
+ * This class is the screen that is displayed when the game ends.
  */
 public class GameOverScreen extends Screen {
 
     private OrthoCamera camera;
     private Texture texture;
 
+    /**
+     * Constructor of the GameOverScreen displays different image based
+     * on whether the game was won or lost
+     */
 
     public GameOverScreen(boolean won) {
         if (won)
@@ -26,14 +30,10 @@ public class GameOverScreen extends Screen {
     public void create() {
         camera = new OrthoCamera();
         camera.resize();
-
     }
 
     @Override
-    public void update() {
-        camera.update();
-
-    }
+    public void update() { camera.update(); }
 
     @Override
     public void render(SpriteBatch sb) {
@@ -41,7 +41,6 @@ public class GameOverScreen extends Screen {
         sb.begin();
         sb.draw(texture, SpaceInvaders.WIDTH / 2 - texture.getWidth() / 2, SpaceInvaders.HEIGHT / 2 - texture.getHeight() /2 );
         sb.end();
-
     }
 
     @Override

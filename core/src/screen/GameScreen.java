@@ -2,16 +2,12 @@ package screen;
 
 import camera.OrthoCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Vector2;
 import entity.EntityManager;
-import entity.Player;
 
 /**
- * Why the packages can not be inside the main like com.logoteknia.spaceinvadersjava.entity etc?
+ * This is the GameScreen class, displayed when the game is
+ * being played.
  *
- * This will be the menu screen.
- *
- * Created by DreddTop on 13/08/15.
  */
 
 public class GameScreen extends Screen {
@@ -19,19 +15,29 @@ public class GameScreen extends Screen {
     private OrthoCamera camera;
     private EntityManager entityManager;
 
+    /**
+     * Creates a new GameScreen, with a OrthoCamera object to resize
+     * the game according to screen size, and a EntityManager with a
+     * number of enemies, at the moment 25.
+     */
     @Override
     public void create() {
-        System.out.println("Created");
         camera = new OrthoCamera();
         entityManager = new EntityManager(25);
     }
-
+    /**
+     * Updates the camera, and calls the update of the EntityManager to update all
+     * entities.
+     */
     @Override
     public void update() {
         camera.update();
         entityManager.update();
     }
 
+    /**
+     * Renders the screen with all the entities.
+     */
     @Override
     public void render(SpriteBatch sb) {
         sb.setProjectionMatrix(camera.combined);
@@ -40,10 +46,14 @@ public class GameScreen extends Screen {
         sb.end();
     }
 
+    /**
+     * Resize the screen (the camera).
+     */
     @Override
     public void resize(int width, int height) {
         camera.resize();
     }
+
 
     @Override
     public void dispose() {

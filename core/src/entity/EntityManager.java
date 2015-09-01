@@ -10,13 +10,19 @@ import screen.GameOverScreen;
 import screen.ScreenManager;
 
 /**
- * Created by DreddTop on 16/08/15.
+ * EntityManager maintains references to all entities in the game,
+ * calls for updates and collision detection for them and checks for
+ * conditions of game over.
  */
 public class EntityManager {
 
     private final Array<Entity> entities = new Array<Entity>();
     private final Player player;
-
+    /**
+     * Create a new EntityManager with some enemies.
+     * @param amount a given number of enemies.
+     *
+     */
     public EntityManager(int amount) {
         player = new Player(new Vector2(240, 18), new Vector2(0, 0), this);
         for (int i = 0; i < amount; i++) {
@@ -25,7 +31,10 @@ public class EntityManager {
             addEntity(new Enemy(new Vector2(x,y), new Vector2(0, -2)));
         }
     }
-
+    /**
+     * Update all entities, remove those missiles that have gone out of bounds
+     *
+     */
     public void update() {
         for (Entity e : entities)
             e.update();
@@ -36,12 +45,22 @@ public class EntityManager {
         checkCollisions();
     }
 
+    /**
+     * Render all the entities on screen
+     * @param sb the sprite batch
+     */
+
     public void render(SpriteBatch sb) {
         for (Entity e : entities)
             e.render(sb);
         player.render(sb);
     }
 
+    /**
+     * Checks for collisions between game objects,
+     * also checks for victory/defeat conditions and
+     * if they are fulfilled goes to the appropriate end screen.
+     */
     private void checkCollisions() {
         for (Enemy e : getEnemies()) {
             for (Missile m : getMissiles()) {
@@ -59,9 +78,18 @@ public class EntityManager {
         }
     }
 
+    /**
+     * Adds a new entity to the array of entities.
+     * @param entity Entity to add.
+     */
     public void addEntity(Entity entity) {
         entities.add(entity);
     }
+
+    /**
+     * Returns an array of all Entities in the game that are of the type Enemy
+     * @return Array of Enemy type objects.
+     */
 
     private Array<Enemy> getEnemies() {
         Array<Enemy> returnArray = new Array<Enemy>();
@@ -72,6 +100,11 @@ public class EntityManager {
         return returnArray;
     }
 
+    /**
+     * Returns an array of all Entities in the game that are of the type Missile
+     * @return Array of Missile type objects.
+     */
+
     private Array<Missile> getMissiles() {
         Array<Missile> returnArray = new Array<Missile>();
         for (Entity e : entities)
@@ -80,6 +113,10 @@ public class EntityManager {
         return returnArray;
     }
 
+    /**
+     * If no enemies are left, end the game.
+     * @return Is game over?
+     */
     public boolean gameOver() {
         return getEnemies().size <= 0;
     }

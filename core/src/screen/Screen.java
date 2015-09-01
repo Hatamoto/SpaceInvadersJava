@@ -5,8 +5,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 /**
  *
  * Abstract superclass of screen-type objects (sometimes called views.)
+ * They represent the different views that the game has, such as start screen,
+ * game screen and end screen.
  *
- * Created by DreddTop on 13/08/15.
  */
 public abstract class Screen {
 

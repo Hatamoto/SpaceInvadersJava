@@ -3,7 +3,7 @@ package com.logoteknia.spaceinvadersjava;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 /**
- * Created by DreddTop on 13/08/15.
+ * This class provides the textures for the game, that are used to create new sprites on screen
  */
 public class TextureManager {
 

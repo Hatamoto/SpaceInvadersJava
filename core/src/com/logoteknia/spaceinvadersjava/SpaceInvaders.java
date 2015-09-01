@@ -13,7 +13,7 @@ import screen.ScreenManager;
  * Different platform specific "Launcher" classes are used to run the game
  * on different platforms. At the moment, Desktop is confirmed to run.
  *
- * Created by DreddTop on 13/08/15.
+ *
  */
 
 public class SpaceInvaders extends ApplicationAdapter {
@@ -21,13 +21,18 @@ public class SpaceInvaders extends ApplicationAdapter {
 	public static int WIDTH = 480, HEIGHT = 800;
 	private SpriteBatch batch;
 
-	
+	/**
+	 * Create a new game
+	 */
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 		ScreenManager.setScreen(new GameScreen());
 	}
 
+	/**
+	 * Destroy the game
+	 */
 	@Override
 	public void dispose () {
 		if (ScreenManager.getCurrentScreen() != null)
@@ -35,6 +40,9 @@ public class SpaceInvaders extends ApplicationAdapter {
 		batch.dispose();
 	}
 
+	/**
+	 * Update and render screen
+	 */
 	@Override
 	public void render () {
 		Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -48,6 +56,9 @@ public class SpaceInvaders extends ApplicationAdapter {
 
 	}
 
+	/**
+	 * Resize the screen
+	 */
 	@Override
 	public void resize (int width, int height) {
 
@@ -56,6 +67,9 @@ public class SpaceInvaders extends ApplicationAdapter {
 
 	}
 
+	/**
+	 * Pause the game
+	 */
 	@Override
 	public void pause() {
 		if (ScreenManager.getCurrentScreen() != null)
@@ -63,6 +77,9 @@ public class SpaceInvaders extends ApplicationAdapter {
 
 	}
 
+	/**
+	 * Resume a paused game
+	 */
 	@Override
 	public void resume() {
 		if (ScreenManager.getCurrentScreen() != null)

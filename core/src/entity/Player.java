@@ -8,19 +8,31 @@ import com.logoteknia.spaceinvadersjava.TextureManager;
 import javax.swing.*;
 
 /**
- * Created by DreddTop on 13/08/15.
+ * Player is a class that is instanced to become the player's spaceship
+ *
  */
 public class Player extends Entity {
 
     private final EntityManager entityManager;
     private long lastFire;
 
+    /**
+     * Create a new Player object.
+     * @param position The position where the Player will be on screen
+     * @param direction The direction where the Player will be moving
+     * @param entityManager The EntityManager that the Player will be attached to.
+     */
     public Player(Vector2 position, Vector2 direction, EntityManager entityManager) {
 
         super(TextureManager.PLAYER, position, direction);
         this.entityManager = entityManager;
     }
 
+    /**
+     * Updates the Player object, changes position based on direction,
+     * and direction based on whether a key is pressed or not, and shoots
+     * a new Missile object if enough time has passed before the last shot.
+     */
     @Override
     public void update() {
         position.add(direction);
