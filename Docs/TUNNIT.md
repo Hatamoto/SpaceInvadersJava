@@ -10,4 +10,6 @@ Tuntikirjanpito:
 19.8.2015   7h Gameplay kuntoon
 20.8.2015   5h Yksikkötestauksen aloittelua
 25.8.2015   3h lisää gameplayta
-26.8.2015
+26.8.2015   6h korjailua
+ 1.9.2015   4h Javadoc
+

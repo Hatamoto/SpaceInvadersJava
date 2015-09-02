@@ -31,7 +31,7 @@ public class SpaceInvaders extends ApplicationAdapter {
 	}
 
 	/**
-	 * Destroy the game
+	 * Destroy the game, dispose of the screen and kill the sprite batch.
 	 */
 	@Override
 	public void dispose () {

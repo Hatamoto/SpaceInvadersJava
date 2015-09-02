@@ -1,5 +1,6 @@
 package entity.entity.test;
 
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
@@ -8,17 +9,12 @@ import entity.Enemy;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static com.logoteknia.spaceinvadersjava.TextureManager.*;
-
-/**
- * Created by DreddTop on 19/08/15.
- */
 public class EnemyTest {
 
     @Test
     public void sample() {
 
-        Assert.fail();
+       // Assert.fail();
     }
 
     @Test

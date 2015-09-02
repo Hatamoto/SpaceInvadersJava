@@ -5,7 +5,7 @@ import com.logoteknia.spaceinvadersjava.SpaceInvaders;
 import com.logoteknia.spaceinvadersjava.TextureManager;
 
 /**
- * A Missile type of object shot by the enemy
+ * A Missile type of object shot by the Player
  *
  */
 public class Missile extends Entity {
