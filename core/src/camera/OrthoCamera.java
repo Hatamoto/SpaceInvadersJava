@@ -1,7 +1,6 @@
 package camera;
 
 /**
- * Created by DreddTop on 13/08/15.
  * Code to handle different screen sizes on devices, courtesy of the magic world of the internet
  */
 
