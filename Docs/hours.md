@@ -13,3 +13,4 @@ Tuntikirjanpito:
 26.8.2015   6h korjailua
  1.9.2015   4h Javadoc
  2.9.2015   9h Luokkakaavio, ohjeet, rakennekuvaus, 
+ 3.9.2015   
