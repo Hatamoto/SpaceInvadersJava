@@ -12,4 +12,4 @@ Tuntikirjanpito:
 25.8.2015   3h lisää gameplayta
 26.8.2015   6h korjailua
  1.9.2015   4h Javadoc
-
+ 2.9.2015   9h Luokkakaavio, ohjeet, rakennekuvaus, 

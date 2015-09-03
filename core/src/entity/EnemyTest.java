@@ -1,4 +1,4 @@
-package entity.entity.test;
+package entity;
 
 
 import com.badlogic.gdx.Gdx;

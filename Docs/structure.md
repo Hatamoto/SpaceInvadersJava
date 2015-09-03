@@ -6,7 +6,8 @@ Niitä on tällä hetkellä kaksi, GameScreen joka näyttää itse pelin sekä
 GameOverScreen joka näyttää voitto- tai tappioruudun tuloksen mukaan.
 Tätä luokkaa edelleen periyttämällä peliin voisi lisätä esim. aloitusmenun
 ja lisää tauluja, tosin taulut voisi myös lisätä GameScreenin logiikkaan
-tai periyttää siitä.
+tai periyttää siitä. ScreenManager huolehtii ruutujen välillä vaihtamisesta ja
+antaa tarvittaessa viitteen sillä hetkellä aktiiviseen ruutuun.
 
 Entity on niin ikään abstrakti luokka josta periytyvät kaikki pelin liikkuvat oliot.
 Sen konstruktori ottaa atribuuttinaan tekstuurin joka saadaan TextureManager-luokan
